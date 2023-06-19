@@ -1,0 +1,62 @@
+@import "../../styles/common";
+
+.wrap {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  @include flex(center, row);
+
+  .inner {
+    @include flex(space-between, row);
+    max-width: 1200px;
+    width: 100%;
+    height: 8rem;
+
+    .left {
+      @include flex(space-between, row);
+      width: 50%;
+      margin-right: 3rem;
+      .logo {
+        color: #fff;
+        width: 10rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    .rigth {
+      @include flex(space-between, row);
+      width: 50%;
+
+      .info_wrap {
+        width: 60%;
+        @include flex(space-between, row);
+        color: #fff;
+
+        span {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@include tablet {
+  .wrap {
+    .inner {
+      display: none;
+    }
+    .mobile {
+      display: block;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

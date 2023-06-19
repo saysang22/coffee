@@ -1,0 +1,10 @@
+.button_wrap {
+  margin: 3rem auto;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap p {
+  text-align: center;
+}

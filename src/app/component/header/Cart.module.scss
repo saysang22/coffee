@@ -1,0 +1,17 @@
+@import "../../styles/common";
+
+.wrap {
+  button {
+    background: none;
+    border: none;
+
+    .icon {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+  }
+
+  span {
+    font-size: 1.8rem;
+  }
+}
