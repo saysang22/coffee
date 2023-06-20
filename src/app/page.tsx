@@ -1,9 +1,11 @@
 import TestRedux from "./TestRedux";
+import Main from "./component/main/Main";
 import styles from "./page.module.scss";
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Main />
       <br />
       <br />
       <br />

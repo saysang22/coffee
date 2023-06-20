@@ -1,4 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
+import { getServerSession } from "next-auth";
 import HeaderItme from "@/model/header";
 import HeaderList from "./HeaderList";
 import style from "./HeaderComponent.module.scss";
@@ -6,8 +7,17 @@ import HeaderInput from "./HeaderInput";
 import Login from "@/app/button/Login";
 import Cart from "./Cart";
 import MobileHeader from "./MobileHeader";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Logout from "@/app/button/Logout";
 
-const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
+const HeaderComponent: React.FC<{ data: HeaderItme[] }> = async ({ data }) => {
+  let session;
+
+  session = await getServerSession(authOptions);
+  // const { data: session } = useSession();
+
+  console.log("세션", session);
+
   return (
     <div className={style.wrap}>
       <div className={style.inner}>
@@ -18,8 +28,14 @@ const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
         <div className={style.rigth}>
           <HeaderInput />
           <div className={style.info_wrap}>
-            <Login />
-            <span>saysang22님</span>
+            {session === null ? (
+              <Login />
+            ) : (
+              <>
+                <Logout />
+                <span>{session.user.name}님</span>
+              </>
+            )}
             <Cart />
           </div>
         </div>
@@ -31,4 +47,4 @@ const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   );
 };
 
-export default HeaderComponent;
+export default memo(HeaderComponent);

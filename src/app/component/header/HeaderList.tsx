@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { memo } from "react";
 import HeaderItme from "@/model/header";
 import Link from "next/link";
 import style from "./HeaderList.module.scss";
@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   const pathname: string | null = usePathname();
+  console.log("헤더리스트");
 
   return (
     <ul className={style.wrap}>
@@ -28,4 +29,4 @@ const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   );
 };
 
-export default HeaderList;
+export default memo(HeaderList);

@@ -5,8 +5,8 @@
   width: 100%;
 
   .border {
-    width: 33.3%;
     text-align: center;
+    width: 33.3%;
     a {
       font-size: 1.8rem;
     }
@@ -21,21 +21,26 @@
 }
 
 .active {
-  width: 33.3%;
   text-align: center;
-
+  width: 33.3%;
+  position: relative;
   a {
     color: #de781f !important;
     font-weight: bold;
     font-size: 1.8rem;
+    display: block;
   }
 
   .line {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
     height: 2px;
     background: #de781f;
     display: block;
-    transform: translateY(10px);
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
     transition: all 0.8s;
   }
 }

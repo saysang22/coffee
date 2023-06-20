@@ -4,13 +4,8 @@ import { Inter } from "next/font/google";
 import Providers from "../redux/provider";
 import HeaderItme from "@/model/header";
 import HeaderComponent from "./component/header/HeaderComponent";
+import { useMemo } from "react";
 const inter = Inter({ subsets: ["latin"] });
-
-const DUMMY_DATA: HeaderItme[] = [
-  { title: "HOME", id: 0, url: "/" },
-  { title: "SHOP", id: 1, url: "/shop" },
-  { title: "게시판", id: 2, url: "/notice" },
-];
 
 export const metadata = {
   title: "Create Next App",
@@ -22,6 +17,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log("레이아웃");
+
+  const DUMMY_DATA: HeaderItme[] = useMemo(() => {
+    return [
+      { title: "HOME", id: 0, url: "/" },
+      { title: "SHOP", id: 1, url: "/shop" },
+      { title: "게시판", id: 2, url: "/notice" },
+    ];
+  }, []);
   return (
     <html lang="en">
       <body className={inter.className}>
