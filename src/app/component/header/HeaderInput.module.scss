@@ -4,17 +4,26 @@
   position: relative;
   width: 192px;
 
+  input {
+    background: none;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+  }
+
   button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 0rem;
+    right: -2rem;
     border: none;
     background: none;
 
     .icon {
       font-size: 1.8rem;
-      color: #222;
+      color: #fff;
     }
   }
 }

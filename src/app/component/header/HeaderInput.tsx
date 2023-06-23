@@ -3,6 +3,8 @@
 import React from "react";
 import style from "./HeaderInput.module.scss";
 import { RiSearchLine } from "react-icons/Ri";
+import Button from "../common/Button";
+import Input from "../common/Input";
 
 const buttonHandler = () => {
   alert("검색버튼");
@@ -11,10 +13,10 @@ const buttonHandler = () => {
 const HeaderInput = () => {
   return (
     <div className={style.wrap}>
-      <input type="text" placeholder="검색어를 입력하세요" />
-      <button onClick={buttonHandler}>
+      <Input type="text" placeholder="검색어를 입력하세요" />
+      <Button onClick={buttonHandler}>
         <RiSearchLine className={style.icon} />
-      </button>
+      </Button>
     </div>
   );
 };

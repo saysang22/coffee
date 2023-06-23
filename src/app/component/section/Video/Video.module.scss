@@ -1,0 +1,123 @@
+@import "../../../styles/common";
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: relative;
+
+  .inner {
+    width: 88%;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    @include flex(space-around, row);
+
+    .img_wrap {
+      position: relative;
+      width: 50%;
+      height: 100vh;
+
+      .img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -9999px;
+      }
+
+      .img_animation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 1s;
+      }
+    }
+
+    .text_wrap {
+      color: #fff;
+      font-size: 3rem;
+      width: 50%;
+      position: relative;
+      .text_inner {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        right: -9999px;
+        transform: translateY(-50%);
+        h3 {
+          color: $point-color;
+          margin: 2rem 0;
+        }
+
+        .bottom {
+          font-size: 2rem;
+
+          button {
+            margin-top: 3rem;
+            background: none;
+            border: 2px solid #fff;
+            border-radius: 0.5rem;
+            width: 20rem;
+            color: #fff;
+            padding: 2rem;
+            font-size: 2rem;
+
+            &:hover {
+              background: rgba($color: #fff, $alpha: 0.8);
+              color: #000;
+              border: none;
+              transition: all 0.5s;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+      .text_animation {
+        position: absolute;
+        top: 50%;
+        right: 18%;
+        transform: translateY(-50%);
+        transition: all, 1s;
+
+        h3 {
+          color: $point-color;
+          margin: 2rem 0;
+        }
+
+        .bottom {
+          font-size: 2rem;
+
+          button {
+            margin-top: 3rem;
+            background: none;
+            border: 2px solid #fff;
+            border-radius: 0.5rem;
+            width: 20rem;
+            color: #fff;
+            padding: 2rem;
+            font-size: 2rem;
+
+            &:hover {
+              background: rgba($color: #fff, $alpha: 0.8);
+              color: #000;
+              border: none;
+              transition: all 0.5s;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  video {
+    width: 100%;
+    height: 100vh;
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../styles/common";
+
+.next {
+  font-size: 5rem;
+  background: none;
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  border: 2px solid #222;
+  border-radius: 50%;
+  @include flex(center, row);
+  position: absolute;
+  top: 50%;
+  right: 45px;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,218 @@
+@import "../../../styles/common";
+
+.wrap {
+  width: 100%;
+  // height: 15rem;
+  background: blue;
+  position: relative;
+
+  .left {
+    position: relative;
+    width: 85%;
+    height: 169px;
+    background: #222;
+    z-index: 2;
+    transition: all 1s;
+
+    .text_wrap {
+      color: #e7c448;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+
+      p:last-child {
+        font-size: 3rem;
+        margin-top: 1rem;
+        color: #fff;
+      }
+    }
+    .text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10rem;
+      font-size: 2rem;
+      color: #fff;
+      display: block;
+    }
+
+    .star {
+      width: 169px;
+      height: 169px;
+      clip-path: polygon(
+        52% 0,
+        57% 37%,
+        100% 40%,
+        75% 69%,
+        100% 100%,
+        49% 100%,
+        20% 100%,
+        21% 100%,
+        0 59%,
+        33% 57%
+      );
+      background: #222;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -81px;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      border-bottom: 1px solid #e7c448;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #e7c448;
+    }
+  }
+
+  .open {
+    position: relative;
+    width: 20%;
+    height: 169px;
+    background: #222;
+    z-index: 2;
+    transition: all 1s;
+
+    .text_wrap {
+      color: #e7c448;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    .text {
+      display: none;
+    }
+    .star {
+      width: 169px;
+      height: 169px;
+      clip-path: polygon(
+        52% 0,
+        57% 37%,
+        100% 40%,
+        75% 69%,
+        100% 100%,
+        49% 100%,
+        20% 100%,
+        21% 100%,
+        0 59%,
+        33% 57%
+      );
+      background: #222;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -81px;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      border-bottom: 1px solid #e7c448;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #e7c448;
+    }
+  }
+
+  .right {
+    background: #e7c448;
+    width: 80%;
+    padding: 2rem 0;
+    height: 169px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include flex(center, row);
+
+    .inner {
+      width: 80%;
+      margin: 0 auto;
+      @include flex(center, row);
+
+      .left_text_wrap {
+        font-size: 1.5rem;
+        margin-right: 10rem;
+
+        @include flex(center, column);
+
+        h2 {
+          color: #222;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          color: #666;
+          font-weight: bold;
+        }
+      }
+
+      .button {
+        text-align: center;
+        width: 20rem;
+
+        .top {
+          @include flex(space-between, row);
+          margin-bottom: 1rem;
+          .signup {
+            background: #222;
+            color: #fff;
+            &:hover {
+              background: none;
+              color: #222;
+            }
+          }
+          button {
+            background: none;
+            width: 48%;
+            border: 2px solid #222;
+            color: #222;
+            font-size: 1.4rem;
+
+            &:hover {
+              background: #222;
+              color: #fff;
+              font-weight: bold;
+              transition: all 0.5s;
+            }
+          }
+        }
+
+        .bottom {
+          button {
+            width: 100%;
+            background: none;
+            border: 2px solid #222;
+            font-size: 1.4rem;
+
+            &:hover {
+              background: #222;
+              color: #fff;
+              font-weight: bold;
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

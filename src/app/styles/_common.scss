@@ -1,3 +1,5 @@
+$point-color: #e7c448;
+
 @mixin flex($center, $direction) {
   display: flex;
   justify-content: $center;

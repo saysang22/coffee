@@ -31,7 +31,6 @@ export const authOptions = {
         password = credentials?.password ?? ''
         let db = (await clientPromise).db()
 
-        console.log(db);
 
         interface User {
           id: string,
@@ -41,7 +40,6 @@ export const authOptions = {
         }
 
         let user: User | null = null
-        console.log('user', email);
 
         if (email) {
           user = await db

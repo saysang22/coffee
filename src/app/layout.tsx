@@ -5,6 +5,7 @@ import Providers from "../redux/provider";
 import HeaderItme from "@/model/header";
 import HeaderComponent from "./component/header/HeaderComponent";
 import { useMemo } from "react";
+import Footer from "./component/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Providers>
           <HeaderComponent data={DUMMY_DATA} />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
