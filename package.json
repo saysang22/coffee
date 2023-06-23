@@ -2,6 +2,7 @@
   "name": "shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://saysang22.github.io/coffee/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
