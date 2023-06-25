@@ -2,7 +2,7 @@
 
 // const repository = "https://saysang22.github.io/coffee/";
 const nextConfig = {
-  output: "export",
+  // output: "export",
 };
 
 module.exports = nextConfig;
