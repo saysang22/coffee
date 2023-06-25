@@ -79,7 +79,7 @@ export const authOptions = {
       return token
     }
   },
-  secret: "qwer1234",
+  secret: process.env.NEXTAUTH_SECRET,
   adapter: MongoDBAdapter(clientPromise)
 
 };
