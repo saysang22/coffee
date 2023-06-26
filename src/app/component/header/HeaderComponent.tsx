@@ -37,7 +37,7 @@ const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
             ) : (
               <>
                 <Logout />
-                <span>{session.user.name}님</span>
+                <span>{session.user?.name}님</span>
               </>
             )}
             <Cart />
