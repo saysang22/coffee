@@ -5,11 +5,11 @@
   "homepage": "https://saysang22.github.io/coffee/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "next export"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.1.3",
