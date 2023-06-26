@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   const pathname: string | null = usePathname();
+  const pathName = process.env.basePath;
   console.log("헤더리스트", pathname);
 
   return (
@@ -19,7 +20,9 @@ const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
           <li
             key={data.id}
             className={
-              pathname && pathname === data.url ? style.active : style.border
+              pathname && pathname === pathName + data.url
+                ? style.active
+                : style.border
             }
           >
             <Link href={data.url}>{data.title} </Link>

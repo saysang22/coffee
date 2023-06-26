@@ -11,6 +11,8 @@ const nextConfig = {
     VIDEO_ADDRESS: isDev ? "/coffee_mv.mp4" : "/coffee/coffee_mv.mp4",
     usePathname: process.env.USE_PATHNAME === true,
     GITHUB_ID: "0e93c4ed4d618d45c75b",
+    basePath: isDev ? "" : "/coffee",
+
     // NEXTAUTH_URL: isDev ? "/api/auth/" : "/coffee/api/auth/",
   },
 };
