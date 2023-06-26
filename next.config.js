@@ -6,12 +6,11 @@ const nextConfig = {
   basePath: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  assetPrefix:
-    process.env.NODE_ENV === "production"
-      ? "https://saysang22.github.io/coffee/"
-      : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "" : "/coffee",
   env: {
-    VIDEO_ADDRESS: process.env.VIDEO_ADDRESS || "/coffee/public/coffee_mv.mp4",
+    VIDEO_ADDRESS: isDev
+      ? "/public/coffee_mv.mp4"
+      : "/coffee/public/coffee_mv.mp4",
     usePathname: process.env.USE_PATHNAME === true,
   },
 };

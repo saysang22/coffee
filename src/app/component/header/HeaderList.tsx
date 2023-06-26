@@ -10,6 +10,8 @@ const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   const pathname: string | null = usePathname();
   console.log("헤더리스트");
 
+  console.log();
+
   return (
     <ul className={style.wrap}>
       {data.map((data) => {
