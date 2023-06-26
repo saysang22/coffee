@@ -2,7 +2,8 @@
 
 // const repository = "https://saysang22.github.io/coffee/";
 const nextConfig = {
-  // output: "export",
+  basePath: "https://github.com/saysang22/coffee.git",
+  assetPrefix: "https://github.com/saysang22/coffee.git",
 };
 
 module.exports = nextConfig;
