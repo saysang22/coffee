@@ -9,7 +9,7 @@
     "lint": "next lint",
     "build": "next build && next export",
     "predeploy": "npm run build",
-    "deploy": "next export"
+    "export": "next export"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.1.3",
