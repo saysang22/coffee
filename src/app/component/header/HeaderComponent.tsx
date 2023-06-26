@@ -10,13 +10,17 @@ import MobileHeader from "./MobileHeader";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Logout from "@/app/button/Logout";
 
-const HeaderComponent: React.FC<{ data: HeaderItme[] }> = async ({ data }) => {
+const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   let session;
 
-  session = await getServerSession(authOptions);
-  // const { data: session } = useSession();
+  const getSession = async () => {
+    session = await getServerSession(authOptions);
+    // const { data: session } = useSession();
 
-  console.log("세션", session);
+    console.log("세션", session);
+  };
+
+  getSession();
 
   return (
     <div className={style.wrap}>
