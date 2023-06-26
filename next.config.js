@@ -4,7 +4,7 @@
 const nextConfig = {
   basePath: "/coffee",
   assetPrefix: "/coffee",
-  output: "standalone",
+  output: "export",
   experimental: {
     appDir: true,
   },
