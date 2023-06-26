@@ -11,7 +11,7 @@ const nextConfig = {
       ? "https://saysang22.github.io/coffee/"
       : "",
   env: {
-    VIDEO_ADDRESS: process.env.VIDEO_ADDRESS || "/public/coffee_mv.mp4",
+    VIDEO_ADDRESS: process.env.VIDEO_ADDRESS || "/coffee/public/coffee_mv.mp4",
     usePathname: process.env.USE_PATHNAME === true,
   },
 };
