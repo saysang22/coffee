@@ -4,7 +4,7 @@ import React, { memo } from "react";
 import HeaderItme from "@/model/header";
 import Link from "next/link";
 import style from "./HeaderList.module.scss";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   const pathname: string | null = usePathname();

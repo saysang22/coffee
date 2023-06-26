@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { IoMdBasket } from "react-icons/Io";
+import { IoMdBasket } from "react-icons/io";
 import style from "./Cart.module.scss";
 
 const cartButtonHandler = () => {

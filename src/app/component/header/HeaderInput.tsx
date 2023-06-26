@@ -2,7 +2,7 @@
 
 import React from "react";
 import style from "./HeaderInput.module.scss";
-import { RiSearchLine } from "react-icons/Ri";
+import { RiSearchLine } from "react-icons/ri";
 import Button from "../common/Button";
 import Input from "../common/Input";
 

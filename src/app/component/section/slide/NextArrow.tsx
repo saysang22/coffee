@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import style from "./NextArrow.module.scss";
-import { GrNext } from "react-icons/Gr";
+import { GrNext } from "react-icons/gr";
 
 interface NextArrowProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;

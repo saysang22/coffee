@@ -2,7 +2,7 @@
 
 import React from "react";
 import style from "./MobileHeader.module.scss";
-import { GiHamburgerMenu } from "react-icons/Gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const mobileMenuHandler = () => {
   alert("모바일메뉴버튼");

@@ -1,4 +1,4 @@
-import { GrPrevious } from "react-icons/Gr";
+import { GrPrevious } from "react-icons/gr";
 import style from "./PrevArrow.module.scss";
 import React from "react";
 interface NextArrowProps {
