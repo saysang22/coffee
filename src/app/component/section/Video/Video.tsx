@@ -61,7 +61,7 @@ const Video = () => {
         </div>
       </div>
       <video loop autoPlay muted>
-        <source src="/public/coffee_mv.mp4" />
+        <source src="/coffee_mv.mp4" />
       </video>
     </section>
   );
