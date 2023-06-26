@@ -22,9 +22,13 @@ export default function RootLayout({
 
   const DUMMY_DATA: HeaderItme[] = useMemo(() => {
     return [
-      { title: "HOME", id: 0, url: "/" },
-      { title: "SHOP", id: 1, url: "/shop/" },
-      { title: "게시판", id: 2, url: "/notice/" },
+      { title: "HOME", id: 0, url: "https://saysang22.github.io/coffee/" },
+      { title: "SHOP", id: 1, url: "https://saysang22.github.io/coffee/shop/" },
+      {
+        title: "게시판",
+        id: 2,
+        url: "https://saysang22.github.io/coffee/notice/",
+      },
     ];
   }, []);
   return (
