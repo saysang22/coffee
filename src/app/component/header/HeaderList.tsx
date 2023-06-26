@@ -8,14 +8,12 @@ import { usePathname } from "next/navigation";
 
 const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   const pathname: string | null = usePathname();
-  console.log("헤더리스트");
-
-  console.log();
+  console.log("헤더리스트", pathname);
 
   return (
     <ul className={style.wrap}>
       {data.map((data) => {
-        console.log(pathname);
+        console.log("pathname", data.url);
 
         return (
           <li
