@@ -5,9 +5,6 @@ const nextConfig = {
   basePath: "/coffee",
   output: "export",
   trailingSlash: true,
-  experimental: {
-    appDir: true,
-  },
 };
 
 module.exports = nextConfig;
