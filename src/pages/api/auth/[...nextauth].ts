@@ -18,7 +18,8 @@ const pwType: string = pw ?? '';
 export const authOptions = {
   providers: [
     GithubProvider({
-      clientId: '0e93c4ed4d618d45c75b',
+      // clientId: '0e93c4ed4d618d45c75b',
+      clientId: idType,
       clientSecret: '753dadc8bcd08f6f0669cadff7691614e9eb3025',
     }),
     CredentialsProvider({
