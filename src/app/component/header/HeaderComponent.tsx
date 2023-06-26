@@ -10,17 +10,13 @@ import MobileHeader from "./MobileHeader";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Logout from "@/app/button/Logout";
 
-const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
+const HeaderComponent: React.FC<{ data: HeaderItme[] }> = async ({ data }) => {
   let session;
 
-  const getSession = async () => {
-    session = await getServerSession(authOptions);
-    // const { data: session } = useSession();
+  session = await getServerSession(authOptions);
+  // const { data: session } = useSession();
 
-    console.log("세션", session);
-  };
-
-  getSession();
+  console.log("세션", session);
 
   return (
     <>
@@ -38,7 +34,7 @@ const HeaderComponent: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
               ) : (
                 <>
                   <Logout />
-                  <span>{session && session.user.name}님</span>
+                  {/* {session.user.name}님 */}
                 </>
               )}
               <Cart />

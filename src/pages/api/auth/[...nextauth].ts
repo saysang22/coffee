@@ -8,11 +8,18 @@ import { NextApiRequest } from 'next'
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import { WithId } from 'mongodb'
 
+const id = process.env.GITHUB_ID
+const pw = process.env.GITHUB_SECRET
+
+const idType: string = id ?? '';
+const pwType: string = pw ?? '';
+
+
 export const authOptions = {
   providers: [
     GithubProvider({
-      clientId: "0e93c4ed4d618d45c75b",
-      clientSecret: "753dadc8bcd08f6f0669cadff7691614e9eb3025",
+      clientId: '0e93c4ed4d618d45c75b',
+      clientSecret: '753dadc8bcd08f6f0669cadff7691614e9eb3025',
     }),
     CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드

@@ -13,6 +13,8 @@ const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
   return (
     <ul className={style.wrap}>
       {data.map((data) => {
+        console.log(pathname);
+
         return (
           <li
             key={data.id}
