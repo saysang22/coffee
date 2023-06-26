@@ -6,7 +6,7 @@ const nextConfig = {
   basePath: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === "production" ? "" : "/coffee",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
   env: {
     VIDEO_ADDRESS: isDev
       ? "/public/coffee_mv.mp4"

@@ -6,8 +6,6 @@ import coffee from "/public/ice_coffee.png";
 import Button from "../../common/Button";
 // import mv_01 from '/public/coffee_mv.mp4';
 
-// let test = process.env;
-// console.log(test);
 const Video = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
