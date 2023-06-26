@@ -44,7 +44,7 @@ const Slide = () => {
                 }}
                 className={style.button}
               >
-                자세히보기!
+                자세히보기
               </Button>
             </div>
           );
