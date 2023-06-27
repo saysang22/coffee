@@ -1,5 +1,15 @@
+import Event from "../component/menu/Event";
+import Top from "../component/menu/Top";
+import style from "./page.module.scss";
+import { metadata } from "../layout";
 export default function Shop() {
-  return <h1>Shop</h1>;
+  (metadata.title = "SHOP"), (metadata.description = "coffee & food menu");
+  return (
+    <div className={style.wrap}>
+      <Top />
+      <Event />
+    </div>
+  );
 }
 
 export const dynamic = "force-static";

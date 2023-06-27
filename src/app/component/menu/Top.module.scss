@@ -1,0 +1,24 @@
+@import "../../styles/common";
+
+.top {
+  max-width: 1200px;
+  margin: 2rem auto;
+  @include flex(space-between, row);
+  h1 {
+    font-size: 3rem;
+  }
+
+  .small_path {
+    @include flex(space-between, row);
+    .homeIcon {
+      color: #222;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #222;
+      font-weight: bold;
+    }
+  }
+}

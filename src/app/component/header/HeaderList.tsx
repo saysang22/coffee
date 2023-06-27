@@ -1,21 +1,20 @@
 "use client";
 
 import React, { memo } from "react";
-import HeaderItme from "@/model/header";
 import Link from "next/link";
 import style from "./HeaderList.module.scss";
 import { usePathname } from "next/navigation";
+import { useAppSelector } from "@/redux/hooks";
 
-const HeaderList: React.FC<{ data: HeaderItme[] }> = ({ data }) => {
+const HeaderList = () => {
+  const data = useAppSelector((state) => state.menuSlice);
+
   const pathname: string | null = usePathname();
   const pathName = process.env.basePath;
-  console.log("헤더리스트", pathname);
 
   return (
     <ul className={style.wrap}>
       {data.map((data) => {
-        console.log("pathname", data.url);
-
         return (
           <li
             key={data.id}

@@ -4,7 +4,7 @@ const repository = "https://saysang22.github.io/coffee/";
 const isDev = process.env.NODE_ENV === "development";
 const nextConfig = {
   basePath: isDev ? "" : "/coffee",
-  output: "export",
+  // output: "export",
   trailingSlash: true,
   assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
   env: {
