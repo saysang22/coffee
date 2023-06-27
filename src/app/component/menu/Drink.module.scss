@@ -1,0 +1,68 @@
+@import "../../styles/common";
+
+.wrap {
+  width: 100%;
+  height: 500px;
+  background: url(../../../../public/drink.jpg) no-repeat 0 56% / 50%;
+  position: relative;
+
+  .inner_wrap {
+    max-width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    .text_wrap {
+      width: 60%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: linear-gradient(to right, transparent 0%, #000 15%);
+      height: 500px;
+      @include flex(center, row);
+
+      .inner {
+        background: #1a1a1a;
+        padding: 2rem;
+        border-radius: 1rem;
+        h3 {
+          font-size: 2.5rem;
+          color: #fff;
+          font-weight: bold;
+          padding: 1.5rem 1rem;
+        }
+
+        .top {
+          color: #fff;
+          font-size: 2rem;
+          padding: 0 1.5rem 1rem;
+        }
+
+        .bottom {
+          padding: 0 1.5rem 1rem;
+          color: #fff;
+          font-size: 1.5rem;
+        }
+
+        .button_wrap {
+          width: 100%;
+          text-align: center;
+          margin-top: 2rem;
+          button {
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            background: none;
+            border: 2px solid #fff;
+            border-radius: 0.5rem;
+
+            &:hover {
+              color: #333;
+              background: #fff;
+              font-weight: bold;
+              transition: all 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

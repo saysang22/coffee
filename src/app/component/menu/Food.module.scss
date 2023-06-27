@@ -1,0 +1,67 @@
+@import "../../styles/common";
+
+.wrap {
+  width: 100%;
+  background: url(../../../../public/food.jpg) no-repeat 100% 0% / 50%;
+  height: 500px;
+  background-color: #fb9b36;
+
+  .inner_wrap {
+    max-width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+
+    .text_wrap {
+      width: 60%;
+      background: linear-gradient(to left, transparent 6%, #fb9b36 15%);
+      height: 500px;
+      @include flex(space-between, row);
+    }
+
+    .inner {
+      padding: 2rem;
+      border-radius: 1rem;
+      background: rgba($color: #fff, $alpha: 0.1);
+
+      h3 {
+        font-size: 2.5rem;
+        color: #222;
+        font-weight: bold;
+        padding: 1.5rem 1rem;
+      }
+
+      .top {
+        color: #222;
+        font-size: 2rem;
+        padding: 0 1.5rem 1rem;
+      }
+
+      .bottom {
+        padding: 0 1.5rem 1rem;
+        color: #222;
+        font-size: 1.5rem;
+      }
+
+      .button_wrap {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
+        button {
+          color: #222;
+          font-size: 1.5rem;
+          padding: 1rem 2rem;
+          background: none;
+          border: 2px solid #222;
+          border-radius: 0.5rem;
+
+          &:hover {
+            color: #fff;
+            background: #222;
+            font-weight: bold;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

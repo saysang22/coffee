@@ -10,6 +10,7 @@ import { GrNext } from "react-icons/gr";
 
 const Top = () => {
   const pathname: string | null = usePathname();
+  const pathName = process.env.basePath;
   const data = useAppSelector((state) => state.menuSlice);
 
   return (
@@ -21,7 +22,7 @@ const Top = () => {
         </Link>
         <GrNext className={style.nextIcon} />
         {data.map((data) => {
-          return pathname && pathname === data.url ? (
+          return pathname && pathname === pathName + data.url ? (
             <Link href={data.url} key={data.id}>
               <p>{data.title}</p>
             </Link>
