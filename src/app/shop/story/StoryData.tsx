@@ -21,7 +21,7 @@ const StoryData: React.FC<{ data: string }> = ({ data }) => {
         </p>
         <div className={style.top}>
           <p>
-            스타벅스 티바나는 'Heaven of Tea'를 콘셉트로 1997년 애틀란타에서 첫
+            스타벅스 티바나는 "Heaven of Tea"를 콘셉트로 1997년 애틀란타에서 첫
             매장을 오픈하였습니다.
           </p>
           <p>격식을 갖추어 어렵고 복잡하게만 느껴졌던 티가 아닌,</p>
