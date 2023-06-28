@@ -5,11 +5,10 @@ import style from "./Drink.module.scss";
 import { useRouter } from "next/navigation";
 
 const Drink = () => {
-  const pathName = process.env.basePath;
   const router = useRouter();
 
   const buttonHandler = () => {
-    router.push(pathName + "/shop/drink");
+    router.push("/shop/drink");
   };
   return (
     <section className={style.wrap}>

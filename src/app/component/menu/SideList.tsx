@@ -34,7 +34,6 @@ const SideList: React.FC<{ DUMMY_DATA: CoffeeType[] }> = ({ DUMMY_DATA }) => {
     }
   };
 
-  const pathName = process.env.basePath;
   return (
     <>
       {DUMMY_DATA.map((data) => {
@@ -52,7 +51,7 @@ const SideList: React.FC<{ DUMMY_DATA: CoffeeType[] }> = ({ DUMMY_DATA }) => {
             {data.name === "이벤트" && test === true ? (
               <ul>
                 <li className={style.child}>
-                  <Link href={pathName + data.url}>이벤트</Link>
+                  <Link href={data.url}>이벤트</Link>
                 </li>
               </ul>
             ) : (
@@ -75,7 +74,7 @@ const SideList: React.FC<{ DUMMY_DATA: CoffeeType[] }> = ({ DUMMY_DATA }) => {
             {data.name === "메뉴이야기" && test3 === true ? (
               <ul>
                 <li className={style.child}>
-                  <Link href={pathName + data.url}>메뉴 이야기</Link>
+                  <Link href={data.url}>메뉴 이야기</Link>
                 </li>
               </ul>
             ) : (

@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 
 const Food = () => {
   const router = useRouter();
-  const pathName = process.env.basePath;
 
   const buttonHandler = () => {
-    router.push(pathName + "/shop/food");
+    router.push("/shop/food");
   };
   return (
     <section className={style.wrap}>

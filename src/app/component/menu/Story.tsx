@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 
 const Story = () => {
   const router = useRouter();
-  const pathName = process.env.basePath;
 
   const buttonHandler = () => {
-    router.push(pathName + "/shop/story");
+    router.push("/shop/story");
   };
   return (
     <section className={style.wrap}>

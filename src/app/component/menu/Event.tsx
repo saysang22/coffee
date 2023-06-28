@@ -12,7 +12,6 @@ import { useRouter } from "next/navigation";
 const Event = () => {
   const [mount, setMount] = useState(false);
   const router = useRouter();
-  const pathName = process.env.basePath;
 
   useEffect(() => {
     setMount(true);
