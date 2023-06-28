@@ -1,6 +1,5 @@
 import HeaderItme from "@/model/header";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Link from 'next/link'
 
 const initialState: HeaderItme[] =
     [

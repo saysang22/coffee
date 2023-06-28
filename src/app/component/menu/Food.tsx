@@ -1,10 +1,14 @@
 "use client";
 import React from "react";
 import style from "./Food.module.scss";
+import { useRouter } from "next/navigation";
 
 const Food = () => {
+  const router = useRouter();
+  const pathName = process.env.basePath;
+
   const buttonHandler = () => {
-    alert("자세히 보기");
+    router.push(pathName + "/shop/food");
   };
   return (
     <section className={style.wrap}>

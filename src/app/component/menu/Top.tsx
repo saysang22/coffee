@@ -8,14 +8,18 @@ import Link from "next/link";
 import { useAppSelector } from "@/redux/hooks";
 import { GrNext } from "react-icons/gr";
 
-const Top = () => {
+const Top = ({ name }) => {
   const pathname: string | null = usePathname();
+  console.log(pathname);
+
   const pathName = process.env.basePath;
-  const data = useAppSelector((state) => state.menuSlice);
+
+  const data = useAppSelector((state) => state.sideMenuSlice);
+  console.log(data);
 
   return (
     <div className={style.top}>
-      <h1>MENU</h1>
+      <h1>{name}</h1>
       <div className={style.small_path}>
         <Link href="/">
           <AiOutlineHome className={style.homeIcon} />
@@ -24,7 +28,7 @@ const Top = () => {
         {data.map((data) => {
           return pathname && pathname === pathName + data.url ? (
             <Link href={data.url} key={data.id}>
-              <p>{data.title}</p>
+              <p>{data.name}</p>
             </Link>
           ) : (
             ""

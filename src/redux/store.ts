@@ -1,5 +1,7 @@
+import sideMenuSlice from './features/sideMenu';
+import foodSlice from './features/food';
+import coffeeSlice from './features/coffee';
 import menuSlice from './features/menu';
-//src/redux/store.js
 import counterSlice from './features/counterSlice';
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -7,6 +9,9 @@ export const store = configureStore({
     reducer: {
         counterSlice,
         menuSlice,
+        coffeeSlice,
+        foodSlice,
+        sideMenuSlice,
     },
     devTools: process.env.NODE_ENV !== 'production'
 })

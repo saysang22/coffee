@@ -1,0 +1,50 @@
+@import "../../styles/common";
+
+.wrap {
+  width: 100%;
+
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .text_wrap {
+      @include flex(space-between, row);
+      margin-top: 3rem;
+      padding: 2rem;
+      border: 1px solid #222;
+
+      .left {
+        @include flex(center, row);
+        h3 {
+          font-size: 2rem;
+          margin-right: 2rem;
+        }
+        span {
+          font-size: 1.5rem;
+        }
+      }
+
+      .right {
+        .icon {
+          font-size: 3rem;
+          color: #3b5998;
+        }
+      }
+    }
+
+    .image_wrap {
+      text-align: center;
+      margin-top: 3rem;
+
+      img {
+        width: 85%;
+        height: auto;
+      }
+    }
+  }
+}

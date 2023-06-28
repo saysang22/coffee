@@ -2,10 +2,14 @@
 
 import React from "react";
 import style from "./Drink.module.scss";
+import { useRouter } from "next/navigation";
 
 const Drink = () => {
+  const pathName = process.env.basePath;
+  const router = useRouter();
+
   const buttonHandler = () => {
-    alert("자세히 보기");
+    router.push(pathName + "/shop/drink");
   };
   return (
     <section className={style.wrap}>

@@ -9,7 +9,7 @@ export default function Shop() {
   (metadata.title = "SHOP"), (metadata.description = "coffee & food menu");
   return (
     <div className={style.wrap}>
-      <Top />
+      <Top name="SHOP" />
       <Event />
       <Drink />
       <Food />

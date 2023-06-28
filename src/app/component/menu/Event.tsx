@@ -7,15 +7,19 @@ import img_02 from "/public/summer_02.png";
 import img_03 from "/public/summer_03.png";
 import img_04 from "/public/summer_04.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 const Event = () => {
   const [mount, setMount] = useState(false);
+  const router = useRouter();
+  const pathName = process.env.basePath;
 
   useEffect(() => {
     setMount(true);
   }, []);
 
   const buttonHandler = () => {
-    alert("자세히보기");
+    router.push(pathName + "/shop/event");
   };
   return (
     <section className={style.wrap}>
