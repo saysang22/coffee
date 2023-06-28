@@ -19,7 +19,7 @@ const Event = () => {
   }, []);
 
   const buttonHandler = () => {
-    router.push(pathName + "/shop/event");
+    router.push("/shop/event");
   };
   return (
     <section className={style.wrap}>
