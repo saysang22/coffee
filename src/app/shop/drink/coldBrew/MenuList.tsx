@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import style from "./MenuList.module.scss";
 import DataType from "@/model/dataType";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   const [isHoverId, setIsHoverId] = useState<string | null>(null);
@@ -17,7 +16,6 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     setIsHoverId(null);
   };
 
-  const router = useRouter();
   const type = result.filter((data) => {
     return data.type === "콜드브루";
   });
@@ -30,11 +28,8 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
         const className = isHover ? style.active : "";
 
         return (
-          <button
-            onClick={() => {
-              router.push(`/detail/${list._id}`);
-            }}
-            // href={`/detail/${list._id.toString()}`}
+          <Link
+            href={`/detail/${list._id.toString()}`}
             key={list._id.toString()}
           >
             <li>
@@ -49,7 +44,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
               </div>
               <div className={style.text_wrap}>{list.title}</div>
             </li>
-          </button>
+          </Link>
         );
       })}
     </ul>
