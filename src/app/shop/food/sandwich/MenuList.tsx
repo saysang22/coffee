@@ -20,6 +20,8 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     return data.type === "샌드위치&샐러드";
   });
 
+  const pathName = process.env.pasePath;
+
   return (
     <ul className={style.ul}>
       {type.map((list) => {
@@ -31,7 +33,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
             <li>
               <div className={style.img_wrap}>
                 <img
-                  src={list.img}
+                  src={pathName + list.img}
                   alt={list.title}
                   onMouseEnter={() => mouseEnter(list._id.toString())}
                   onMouseLeave={mouseLeave}

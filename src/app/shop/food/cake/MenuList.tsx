@@ -16,6 +16,8 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     setIsHoverId(null);
   };
 
+  const pathName = process.env.pasePath;
+
   const type = result.filter((data) => {
     return data.type === "케이크";
   });
@@ -31,7 +33,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
             <li>
               <div className={style.img_wrap}>
                 <img
-                  src={list.img}
+                  src={pathName + list.img}
                   alt={list.title}
                   onMouseEnter={() => mouseEnter(list._id.toString())}
                   onMouseLeave={mouseLeave}

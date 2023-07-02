@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import style from "./MenuList.module.scss";
-// import DataType from "@/model/dataType";
 import Link from "next/link";
 import DataType from "@/model/dataType";
 
@@ -18,7 +17,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   };
 
   const type = result.filter((data) => {
-    return data.type === "샌드위치&샐러드";
+    return data.type === "콜드브루";
   });
 
   const pathName = process.env.basePath;

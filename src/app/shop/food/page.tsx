@@ -13,6 +13,7 @@ const page = async () => {
   const client = await clientPromise;
   const db = client.db("coffee");
   const result = await db.collection<DataType>("drink").find().toArray();
+
   return (
     <ShopUI name="푸드">
       <SideNav />

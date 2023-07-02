@@ -16,9 +16,14 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     setIsHoverId(null);
   };
 
+  const type = result.filter((data) => {
+    return data.type === "콜드브루";
+  });
+
+  const pathName = process.env.pasePath;
   return (
     <ul className={style.ul}>
-      {result.map((list) => {
+      {type.map((list) => {
         const isHover = isHoverId === list._id.toString();
         const className = isHover ? style.active : "";
 
@@ -27,7 +32,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
             <li>
               <div className={style.img_wrap}>
                 <img
-                  src={list.img}
+                  src={pathName + list.img}
                   alt={list.title}
                   onMouseEnter={() => mouseEnter(list._id.toString())}
                   onMouseLeave={mouseLeave}
