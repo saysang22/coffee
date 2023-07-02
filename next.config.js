@@ -7,8 +7,11 @@ const nextConfig = {
   output: "export",
   trailingSlash: true,
   assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
+  // experimental: {
+  //   images: true,
+  // },
   experimental: {
-    images: true,
+    reactRefresh: true,
   },
   env: {
     VIDEO_ADDRESS: isDev ? "/coffee_mv.mp4" : "/coffee/coffee_mv.mp4",

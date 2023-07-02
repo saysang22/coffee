@@ -15,7 +15,6 @@ const Top = ({ name }) => {
   const pathName = process.env.basePath;
 
   const data = useAppSelector((state) => state.sideMenuSlice);
-  console.log(data);
 
   return (
     <div className={style.top}>
