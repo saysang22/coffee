@@ -36,7 +36,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
             <li>
               <div className={style.img_wrap}>
                 <img
-                  src={list.img}
+                  src={pathName + list.img}
                   alt={list.title}
                   onMouseEnter={() => mouseEnter(list._id.toString())}
                   onMouseLeave={mouseLeave}
