@@ -21,6 +21,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     return data.type === "샌드위치&샐러드";
   });
 
+  const pathName = process.env.basePath;
   return (
     <ul className={style.ul}>
       {type.map((list) => {
@@ -28,7 +29,10 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
         const className = isHover ? style.active : "";
 
         return (
-          <Link href={`/detail/${list._id}`} key={list._id.toString()}>
+          <Link
+            href={` ${pathName}/detail/${list._id}`}
+            key={list._id.toString()}
+          >
             <li>
               <div className={style.img_wrap}>
                 <img

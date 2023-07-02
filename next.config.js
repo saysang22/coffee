@@ -7,9 +7,9 @@ const nextConfig = {
   output: "export",
   trailingSlash: true,
   assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
-  // experimental: {
-  //   images: true,
-  // },
+  experimental: {
+    images: true,
+  },
   experimental: {
     reactRefresh: true,
   },
