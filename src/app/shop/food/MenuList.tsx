@@ -17,7 +17,7 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   };
 
   const type = result.filter((data) => {
-    return data.type === "콜드브루";
+    return data.type === "브레드";
   });
 
   const pathName = process.env.pasePath;

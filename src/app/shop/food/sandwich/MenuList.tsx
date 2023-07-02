@@ -29,7 +29,10 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
         const className = isHover ? style.active : "";
 
         return (
-          <Link href={`/detail/${list._id}`} key={list._id.toString()}>
+          <Link
+            href={`/detail/${list._id.toString()}`}
+            key={list._id.toString()}
+          >
             <li>
               <div className={style.img_wrap}>
                 <img
