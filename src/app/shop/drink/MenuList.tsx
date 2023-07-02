@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import style from "./MenuList.module.scss";
-import DataType from "@/model/dataType";
+// import DataType from "@/model/dataType";
 import Link from "next/link";
+import DataType from "@/model/dataType";
 
 const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   const [isHoverId, setIsHoverId] = useState<string | null>(null);
@@ -16,9 +17,13 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     setIsHoverId(null);
   };
 
+  const type = result.filter((data) => {
+    return data.type === "샌드위치&샐러드";
+  });
+
   return (
     <ul className={style.ul}>
-      {result.map((list) => {
+      {type.map((list) => {
         const isHover = isHoverId === list._id.toString();
         const className = isHover ? style.active : "";
 
