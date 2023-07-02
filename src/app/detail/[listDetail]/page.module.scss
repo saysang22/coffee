@@ -1,0 +1,88 @@
+@import "../../styles/common";
+
+.wrap {
+  width: 100%;
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    @include flex(space-between, row);
+
+    .img_wrap {
+      width: 40%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .text_wrap {
+      width: 60%;
+      display: flex;
+      align-self: start;
+      padding: 0 0rem 0 2rem 0;
+      flex-direction: column;
+
+      .title_wrap {
+        width: 100%;
+        padding: 2rem;
+        @include flex(space-between, row);
+        align-items: start;
+        h2 {
+          font-size: 1.8rem;
+        }
+        button {
+          background: none;
+          border: 1px solid #222;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .description {
+        width: 100%;
+        padding: 2rem 0 0 0rem;
+        border-top: 2px solid #222;
+        margin: 0 0 0 15px;
+
+        span {
+          font-size: 1.5rem;
+          display: block;
+        }
+      }
+
+      .info_wrap {
+        .info_title_wrap {
+          margin: 3rem 0 0 15px;
+          font-size: 1.5rem;
+          border-top: 2px solid #d1d1d1;
+          border-bottom: 2px solid #d1d1d1;
+          padding: 2rem 0;
+          @include flex(space-between, row);
+        }
+
+        .content_wrap {
+          @include flex(space-between, row);
+          margin: 0 0 0 15px;
+          .flex {
+            @include flex(space-between, row);
+            padding: 2rem 1.5rem;
+            width: 100%;
+          }
+
+          .left {
+            width: 50%;
+            font-size: 1.4rem;
+            border-right: 1px solid #d1d1d1;
+
+            @include flex(space-between, column);
+          }
+
+          .right {
+            width: 50%;
+            font-size: 1.4rem;
+            @include flex(space-between, column);
+          }
+        }
+      }
+    }
+  }
+}
