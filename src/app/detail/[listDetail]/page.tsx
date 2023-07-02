@@ -5,7 +5,6 @@ import DataType from "@/model/dataType";
 import { ObjectId } from "mongodb";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
-
 export const metadata = {
   title: "상세페이지",
   description: "상세페이지",
