@@ -22,11 +22,15 @@ body {
   overflow-x: hidden;
   overflow: auto;
   font-size: 10px;
+  min-height: 100vh;
+  position: relative;
 }
 
 body {
   padding-top: 10rem;
+  padding-bottom: 20rem;
 }
+
 button {
   padding: 1rem;
   cursor: pointer;

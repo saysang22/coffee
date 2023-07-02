@@ -1,12 +1,24 @@
 import React from "react";
-import style from "./page.module.scss";
-const page = () => {
+import SideNav from "@/app/component/menu/SideNav";
+import ShopUI from "@/app/component/UI/ShopUI";
+import DataType from "@/model/dataType";
+import { metadata } from "@/app/layout";
+import clientPromise from "@/utill/database";
+import MenuList from "./MenuList";
+
+metadata.title = "coldBrew";
+metadata.description = "콜드브루 페이지";
+
+const page = async () => {
+  const client = await clientPromise;
+  const db = client.db("coffee");
+  const result = await db.collection<DataType>("drink").find().toArray();
+
   return (
-    <section className={style.wrap}>
-      <div className={style.inner}>
-        <h2>콜드브루</h2>
-      </div>
-    </section>
+    <ShopUI name="콜드브루">
+      <SideNav />
+      <MenuList result={result} />
+    </ShopUI>
   );
 };
 
