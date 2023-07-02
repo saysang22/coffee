@@ -4,9 +4,10 @@ const repository = "https://saysang22.github.io/coffee/";
 const isDev = process.env.NODE_ENV === "development";
 const nextConfig = {
   basePath: isDev ? "" : "/coffee",
+  assetPrefix: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
+  // assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
   experimental: {
     images: true,
   },
