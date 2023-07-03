@@ -1,47 +1,26 @@
-import React from "react";
-import style from "./page.module.scss";
-import clientPromise from "@/utill/database";
 import DataType from "@/model/dataType";
+import clientPromise from "@/utill/database";
+import React from "react";
 import { ObjectId } from "mongodb";
+import style from "./page.module.scss";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
-import { GetServerSideProps, GetServerSidePropsContext } from "next";
-import { ParsedUrlQuery } from "querystring";
-export const dynamicParams = true;
 
-export const metadata = {
-  title: "상세페이지",
-  description: "상세페이지",
-};
-type DetailProps = {
-  result: DataType | null;
-};
-export const getServerSideProps: GetServerSideProps<
-  DetailProps,
-  { listDetail: string }
-> = async ({ params }) => {
+export async function generateStaticParams() {
   const client = await clientPromise;
   const db = client.db("coffee");
-  const result = (await db.collection("drink").findOne({
-    _id: new ObjectId(params!.listDetail as string | undefined),
-  })) as DataType | null;
-
-  return {
-    props: {
-      result,
-    },
-  };
-};
-const Detail = async ({
-  params: { listDetail },
-}: {
-  params: { listDetail: string };
-}) => {
-  const client = await clientPromise;
-  const db = client.db("coffee");
-  const result = await db.collection("drink").findOne({
-    _id: new ObjectId(listDetail),
+  const result = await db.collection<DataType>("drink").find().toArray();
+  return result.map((data: DataType) => {
+    listDetail: data._id.toString();
   });
+}
+
+const Detail = async ({ params }: { params: { listDetail: string } }) => {
+  const client = await clientPromise;
+  const db = client.db("coffee");
+  const result = await db
+    .collection<DataType>("drink")
+    .findOne(new ObjectId(params.listDetail));
 
   const test = result?.description.replaceAll("\\n", "<br/><br/>");
   return (
