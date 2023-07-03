@@ -5,6 +5,7 @@ import DataType from "@/model/dataType";
 import { metadata } from "@/app/layout";
 import clientPromise from "@/utill/database";
 import MenuList from "./MenuList";
+export const dynamic = "force-dynamic";
 
 metadata.title = "coldBrew";
 metadata.description = "콜드브루 페이지";
@@ -23,4 +24,3 @@ const page = async () => {
 };
 
 export default page;
-export const dynamic = "force-static";
