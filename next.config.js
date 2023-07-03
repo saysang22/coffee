@@ -7,7 +7,7 @@ const nextConfig = {
   assetPrefix: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  exportPathMap: async function () {
+  exportPathMap: async function generateStaticParams() {
     const paths = {
       "/": { page: "/" },
       "/shop": { page: "/shop" },
