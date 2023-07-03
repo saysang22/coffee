@@ -17,6 +17,7 @@ export async function generateStaticParams() {
     return { listDetail: data._id.toString() };
   });
 }
+const pathName = process.env.basePath;
 
 const Detail = async ({ params }: { params: { listDetail: string } }) => {
   const client = await clientPromise;
@@ -32,7 +33,7 @@ const Detail = async ({ params }: { params: { listDetail: string } }) => {
         <Top name={result?.type} />
         <div className={style.inner}>
           <div className={style.img_wrap}>
-            <img src={result?.img} alt={result?.img} />
+            <img src={pathName! + result?.img} alt={result?.title} />
           </div>
           <div className={style.text_wrap}>
             <div className={style.title_wrap}>
