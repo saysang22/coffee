@@ -2,10 +2,10 @@ import React from "react";
 import style from "./page.module.scss";
 import clientPromise from "@/utill/database";
 import DataType from "@/model/dataType";
-import { ObjectId } from "mongodb";
+import { ObjectId, Filter } from "mongodb";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
 export const dynamic = "force-static";
 
@@ -13,14 +13,16 @@ export const metadata = {
   title: "상세페이지",
   description: "상세페이지",
 };
-const Detail: NextPage<{ params: { listDetail: string } }> = async ({
-  params,
-}) => {
-  const client = await clientPromise;
-  const db = client.db("coffee");
-  const result = (await db.collection("drink").findOne({
-    _id: new ObjectId(params.listDetail),
-  })) as DataType | null;
+
+type TestT = {
+  result: DataType | null;
+};
+const Detail: React.FC<TestT> = async ({ result }) => {
+  // const client = await clientPromise;
+  // const db = client.db("coffee");
+  // const result = (await db.collection("drink").findOne({
+  //   _id: new ObjectId(params.listDetail),
+  // })) as DataType | null;
 
   const test = result?.description.replaceAll("\\n", "<br/><br/>");
   return (
@@ -86,23 +88,19 @@ const Detail: NextPage<{ params: { listDetail: string } }> = async ({
   );
 };
 
-interface DetailProps {
-  result: DataType | null;
-}
-
-export const generateStaticParams: GetServerSideProps<
-  DetailProps,
-  ParsedUrlQuery
-> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<
+  TestT,
+  { listDetail: string }
+> = async (context: GetServerSidePropsContext<{ listDetail: string }>) => {
   const client = await clientPromise;
   const db = client.db("coffee");
-  const res = (await db.collection("drink").findOne({
-    _id: new ObjectId(params?.listDetail as string),
-  })) as DataType | null;
+  const res = await db.collection<DataType>("drink").findOne({
+    _id: new ObjectId(context.params?.listDetail as string) as any,
+  });
 
   return {
     props: {
-      result: res,
+      result: res || null,
     },
   };
 };
