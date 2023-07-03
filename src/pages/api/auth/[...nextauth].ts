@@ -20,7 +20,7 @@ export const authOptions = {
     GithubProvider({
       // clientId: '0e93c4ed4d618d45c75b',
       clientId: idType,
-      clientSecret: '753dadc8bcd08f6f0669cadff7691614e9eb3025',
+      clientSecret: '320043a26e2c19981e6f04043c539b6c263b0035',
     }),
     CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드
