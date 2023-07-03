@@ -7,7 +7,14 @@ const nextConfig = {
   assetPrefix: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-
+  async rewrites() {
+    return [
+      {
+        source: "/detail/:listDetail", // Define the route pattern
+        destination: "/detail/[listDetail]", // Point it to the corresponding page file
+      },
+    ];
+  },
   experimental: {
     images: true,
   },

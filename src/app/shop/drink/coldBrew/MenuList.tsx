@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "./MenuList.module.scss";
 import DataType from "@/model/dataType";
 import Link from "next/link";
 
 const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   const [isHoverId, setIsHoverId] = useState<string | null>(null);
-  const [test, setTest] = useState<DataType[]>([]);
-
   const mouseEnter = (id: string) => {
     setIsHoverId(id);
   };
