@@ -7,7 +7,7 @@ const nextConfig = {
   assetPrefix: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  exportPathMap: async function generateStaticParams() {
+  async generateStaticParams() {
     const paths = {
       "/": { page: "/" },
       "/shop": { page: "/shop" },
@@ -24,12 +24,10 @@ const nextConfig = {
       "/shop/food/sandwich": { page: "/shop/food/sandwich" },
       "/shop/story": { page: "/shop/story" },
     };
-
     return paths;
   },
 
   experimental: {
-    reactRefresh: true,
     images: true,
   },
   env: {
