@@ -2,32 +2,36 @@ import React from "react";
 import style from "./page.module.scss";
 import clientPromise from "@/utill/database";
 import DataType from "@/model/dataType";
-import { ObjectId, Filter } from "mongodb";
+import { ObjectId } from "mongodb";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export const metadata = {
   title: "상세페이지",
   description: "상세페이지",
 };
-
-export const generateStaticParams = async (
-  context: GetServerSidePropsContext<{ listDetail: string }>
-) => {
+type DetailProps = {
+  result: DataType | null;
+};
+export const getServerSideProps: GetServerSideProps<
+  DetailProps,
+  { listDetail: string }
+> = async ({ params }) => {
   const client = await clientPromise;
   const db = client.db("coffee");
-  const res = await db.collection<DataType>("drink").findOne({
-    _id: new ObjectId(context.params?.listDetail as string) as any,
-  });
+  const result = (await db.collection("drink").findOne({
+    _id: new ObjectId(params!.listDetail as string | undefined),
+  })) as DataType | null;
 
   return {
-    listDetail: res || null,
+    props: {
+      result,
+    },
   };
 };
-
 const Detail = async ({
   params: { listDetail },
 }: {
