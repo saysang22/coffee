@@ -14,7 +14,7 @@ export const metadata = {
   description: "상세페이지",
 };
 
-const Detail: React.FC<{ result: DataType | null }> = async ({ result }) => {
+const Detail: React.FC<{ result: DataType | null }> = ({ result }) => {
   // const client = await clientPromise;
   // const db = client.db("coffee");
   // const result = (await db.collection("drink").findOne({
