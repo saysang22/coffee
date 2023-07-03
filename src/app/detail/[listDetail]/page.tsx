@@ -14,10 +14,7 @@ export const metadata = {
   description: "상세페이지",
 };
 
-type TestT = {
-  result: DataType | null;
-};
-const Detail: React.FC<TestT> = async ({ result }) => {
+const Detail: React.FC<{ result: DataType | null }> = async ({ result }) => {
   // const client = await clientPromise;
   // const db = client.db("coffee");
   // const result = (await db.collection("drink").findOne({
@@ -88,10 +85,9 @@ const Detail: React.FC<TestT> = async ({ result }) => {
   );
 };
 
-export const generateStaticParams: GetServerSideProps<
-  TestT,
-  { listDetail: string }
-> = async (context: GetServerSidePropsContext<{ listDetail: string }>) => {
+export const generateStaticParams = async (
+  context: GetServerSidePropsContext<{ listDetail: string }>
+) => {
   const client = await clientPromise;
   const db = client.db("coffee");
   const res = await db.collection<DataType>("drink").findOne({
