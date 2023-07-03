@@ -27,11 +27,10 @@ const nextConfig = {
 
     return paths;
   },
-  experimental: {
-    images: true,
-  },
+
   experimental: {
     reactRefresh: true,
+    images: true,
   },
   env: {
     VIDEO_ADDRESS: isDev ? "/coffee_mv.mp4" : "/coffee/coffee_mv.mp4",
