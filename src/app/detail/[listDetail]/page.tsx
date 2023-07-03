@@ -88,7 +88,7 @@ const Detail: React.FC<TestT> = async ({ result }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<
+export const generateStaticParams: GetServerSideProps<
   TestT,
   { listDetail: string }
 > = async (context: GetServerSidePropsContext<{ listDetail: string }>) => {
