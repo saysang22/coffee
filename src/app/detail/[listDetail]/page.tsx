@@ -90,7 +90,10 @@ interface DetailProps {
   result: DataType | null;
 }
 
-export const generateStaticParams: GetServerSideProps = async ({ params }) => {
+export const generateStaticParams: GetServerSideProps<
+  DetailProps,
+  ParsedUrlQuery
+> = async ({ params }) => {
   const client = await clientPromise;
   const db = client.db("coffee");
   const res = (await db.collection("drink").findOne({
