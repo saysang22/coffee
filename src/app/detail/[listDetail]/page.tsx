@@ -5,6 +5,7 @@ import DataType from "@/model/dataType";
 import { ObjectId } from "mongodb";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
+export const dynamic = "force-static";
 
 export const metadata = {
   title: "상세페이지",
