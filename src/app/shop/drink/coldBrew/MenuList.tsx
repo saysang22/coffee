@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./MenuList.module.scss";
 import DataType from "@/model/dataType";
 import Link from "next/link";
 
 const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
   const [isHoverId, setIsHoverId] = useState<string | null>(null);
+  const [test, setTest] = useState<DataType[]>([]);
 
   const mouseEnter = (id: string) => {
     setIsHoverId(id);
@@ -50,5 +51,16 @@ const MenuList: React.FC<{ result: DataType[] }> = ({ result }) => {
     </ul>
   );
 };
+
+export async function getServerSideProp() {
+  const response = await fetch("/api/list");
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default MenuList;

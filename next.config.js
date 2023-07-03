@@ -5,27 +5,8 @@ const isDev = process.env.NODE_ENV === "development";
 const nextConfig = {
   basePath: isDev ? "" : "/coffee",
   assetPrefix: isDev ? "" : "/coffee",
-  output: "export",
+  // output: "export",
   trailingSlash: true,
-  async generateStaticParams() {
-    const paths = {
-      "/": { page: "/" },
-      "/shop": { page: "/shop" },
-      "/shop/drink": { page: "/shop/drink" },
-
-      "/shop/drink/brood": { page: "/shop/drink/brood" },
-      "/shop/drink/coldBrew": { page: "/shop/drink/coldBrew" },
-      "/shop/drink/espresso": { page: "/shop/drink/espresso" },
-      "/shop/event": { page: "/shop/event" },
-      "/shop/food": { page: "/shop/food" },
-
-      "/shop/food/bread": { page: "/shop/food/bread" },
-      "/shop/food/cake": { page: "/shop/food/cake" },
-      "/shop/food/sandwich": { page: "/shop/food/sandwich" },
-      "/shop/story": { page: "/shop/story" },
-    };
-    return paths;
-  },
 
   experimental: {
     images: true,
