@@ -7,19 +7,37 @@ import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
 import { GetServerSideProps, GetServerSidePropsContext } from "next";
 import { ParsedUrlQuery } from "querystring";
-export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export const metadata = {
   title: "상세페이지",
   description: "상세페이지",
 };
 
-const Detail: React.FC<{ result: DataType | null }> = ({ result }) => {
-  // const client = await clientPromise;
-  // const db = client.db("coffee");
-  // const result = (await db.collection("drink").findOne({
-  //   _id: new ObjectId(params.listDetail),
-  // })) as DataType | null;
+export const generateStaticParams = async (
+  context: GetServerSidePropsContext<{ listDetail: string }>
+) => {
+  const client = await clientPromise;
+  const db = client.db("coffee");
+  const res = await db.collection<DataType>("drink").findOne({
+    _id: new ObjectId(context.params?.listDetail as string) as any,
+  });
+
+  return {
+    listDetail: res || null,
+  };
+};
+
+const Detail = async ({
+  params: { listDetail },
+}: {
+  params: { listDetail: string };
+}) => {
+  const client = await clientPromise;
+  const db = client.db("coffee");
+  const result = await db.collection("drink").findOne({
+    _id: new ObjectId(listDetail),
+  });
 
   const test = result?.description.replaceAll("\\n", "<br/><br/>");
   return (
@@ -85,20 +103,4 @@ const Detail: React.FC<{ result: DataType | null }> = ({ result }) => {
   );
 };
 
-export const generateStaticParams = async (
-  context: GetServerSidePropsContext<{ listDetail: string }>
-) => {
-  const client = await clientPromise;
-  const db = client.db("coffee");
-  const res = await db.collection<DataType>("drink").findOne({
-    _id: new ObjectId(context.params?.listDetail as string) as any,
-  });
-
-  return {
-    props: {
-      result: res || null,
-    },
-  };
-};
-
-export { Detail as default };
+export default Detail;
