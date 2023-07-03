@@ -101,4 +101,4 @@ export const generateStaticParams = async (
   };
 };
 
-export default Detail;
+export { Detail as default };
