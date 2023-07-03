@@ -5,6 +5,8 @@ import DataType from "@/model/dataType";
 import { ObjectId } from "mongodb";
 import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "상세페이지",
   description: "상세페이지",
@@ -83,5 +85,3 @@ const Detail: React.FC<{
 };
 
 export default Detail;
-
-export const dynamic = "force-static";
