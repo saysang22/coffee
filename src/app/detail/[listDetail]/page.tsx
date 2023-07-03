@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   const db = client.db("coffee");
   const result = await db.collection<DataType>("drink").find().toArray();
   return result.map((data: DataType) => {
-    listDetail: data._id.toString();
+    return { listDetail: data._id.toString() };
   });
 }
 
