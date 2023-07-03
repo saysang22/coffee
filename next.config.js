@@ -7,7 +7,26 @@ const nextConfig = {
   assetPrefix: isDev ? "" : "/coffee",
   output: "export",
   trailingSlash: true,
-  // assetPrefix: process.env.NODE_ENV === "production" ? "/coffee" : "",
+  exportPathMap: async function () {
+    const paths = {
+      "/": { page: "/" },
+      "/shop": { page: "/shop" },
+      "/shop/drink": { page: "/shop/drink" },
+
+      "/shop/drink/brood": { page: "/shop/drink/brood" },
+      "/shop/drink/coldBrew": { page: "/shop/drink/coldBrew" },
+      "/shop/drink/espresso": { page: "/shop/drink/espresso" },
+      "/shop/event": { page: "/shop/event" },
+      "/shop/food": { page: "/shop/food" },
+
+      "/shop/food/bread": { page: "/shop/food/bread" },
+      "/shop/food/cake": { page: "/shop/food/cake" },
+      "/shop/food/sandwich": { page: "/shop/food/sandwich" },
+      "/shop/story": { page: "/shop/story" },
+    };
+
+    return paths;
+  },
   experimental: {
     images: true,
   },
@@ -19,8 +38,6 @@ const nextConfig = {
     usePathname: process.env.USE_PATHNAME === true,
     GITHUB_ID: "0e93c4ed4d618d45c75b",
     basePath: isDev ? "" : "/coffee",
-
-    // NEXTAUTH_URL: isDev ? "/api/auth/" : "/coffee/api/auth/",
   },
 };
 
