@@ -83,5 +83,3 @@ const Detail: React.FC<{
 };
 
 export default Detail;
-
-export const dynamic = "force-dynamic";
