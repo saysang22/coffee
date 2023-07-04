@@ -10,9 +10,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Logout from "@/app/button/Logout";
 
 const HeaderComponent = async () => {
-  let session;
-
-  session = await getServerSession(authOptions);
+  let session = await getServerSession(authOptions);
 
   return (
     <>
