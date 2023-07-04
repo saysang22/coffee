@@ -19,7 +19,8 @@ export const authOptions: NextAuthOptions = {
   providers: [
     GithubProvider({
       clientId: idType,
-      clientSecret: pwType,
+      clientSecret: '753dadc8bcd08f6f0669cadff7691614e9eb3025',
+
     }),
     CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드
