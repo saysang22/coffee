@@ -25,13 +25,14 @@ const Detail = async ({ params }: { params: { listDetail: string } }) => {
     .findOne(new ObjectId(params.listDetail));
 
   const test = result?.description.replaceAll("\\n", "<br/><br/>");
+  const pathName = process.env.basePath;
   return (
     <>
       <section className={style.wrap}>
         <Top name={result?.type} />
         <div className={style.inner}>
           <div className={style.img_wrap}>
-            <img src={result?.img} alt={result?.img} />
+            <img src={pathName + result!.img} alt={result?.img} />
           </div>
           <div className={style.text_wrap}>
             <div className={style.title_wrap}>
