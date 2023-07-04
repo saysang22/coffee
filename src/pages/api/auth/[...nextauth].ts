@@ -20,7 +20,10 @@ export const authOptions: NextAuthOptions = {
     GithubProvider({
       clientId: idType,
       clientSecret: '753dadc8bcd08f6f0669cadff7691614e9eb3025',
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3dfd4e8 ('상세페이지이미지경로수정')
     }),
     CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드
