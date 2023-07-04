@@ -1,6 +1,6 @@
 //@/pages/api/auth[...nextauth].js
 import clientPromise from '@/utill/database'
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt'
@@ -9,18 +9,17 @@ import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import { WithId } from 'mongodb'
 
 const id = process.env.GITHUB_ID
-const pw = process.env.GITHUB_SECRET
+const pw = process.env.GITHUM_PW
 
 const idType: string = id ?? '';
 const pwType: string = pw ?? '';
 
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GithubProvider({
-      // clientId: '0e93c4ed4d618d45c75b',
       clientId: idType,
-      clientSecret: '320043a26e2c19981e6f04043c539b6c263b0035',
+      clientSecret: pwType,
     }),
     CredentialsProvider({
       //1. 로그인페이지 폼 자동생성해주는 코드
@@ -74,7 +73,7 @@ export const authOptions = {
   ],
   //3. jwt 써놔야 잘됩니다 + jwt 만료일설정
   session: {
-    // strategy: undefined,
+    strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60, //30일
   },
 

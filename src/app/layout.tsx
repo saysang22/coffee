@@ -4,9 +4,8 @@ import { Inter } from "next/font/google";
 import Providers from "../redux/provider";
 import HeaderComponent from "./component/header/HeaderComponent";
 import Footer from "./component/footer/Footer";
-import { HeadType } from "@/model/head";
-const inter = Inter({ subsets: ["latin"] });
 import { Metadata } from "next";
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

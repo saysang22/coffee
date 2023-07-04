@@ -6,7 +6,6 @@ import Login from "@/app/button/Login";
 
 const Banner = () => {
   const [open, setOpen] = useState<boolean>(true);
-  console.log(open);
 
   const openHandler = () => {
     setOpen(!open);
