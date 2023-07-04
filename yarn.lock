@@ -3410,10 +3410,10 @@
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
 
-"next-auth@^4", "next-auth@^4.21.1":
-  "integrity" "sha512-NYkU4jAPSVxWhCblE8dDFAnKM7kOoO/QEobQ0RoEVP9Wox99A3PKHwOAsWhSg8ahJG/iKIWk2Bo1xHvsS4R39Q=="
-  "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.21.1.tgz"
-  "version" "4.21.1"
+"next-auth@^4", "next-auth@^4.22.1":
+  "integrity" "sha512-NTR3f6W7/AWXKw8GSsgSyQcDW6jkslZLH8AiZa5PQ09w1kR8uHtR9rez/E9gAq/o17+p0JYHE8QjF3RoniiObA=="
+  "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.22.1.tgz"
+  "version" "4.22.1"
   dependencies:
     "@babel/runtime" "^7.20.13"
     "@panva/hkdf" "^1.0.2"

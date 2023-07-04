@@ -2,8 +2,14 @@
 import React from "react";
 import style from "./Scroll.module.scss";
 import Button from "../../common/Button";
+import { useRouter } from "next/navigation";
 
 const Scroll_img = () => {
+  const router = useRouter();
+
+  const linkHandler = () => {
+    router.push("/shop");
+  };
   return (
     <section className={style.wrap}>
       <div className={style.inner}>
@@ -20,13 +26,7 @@ const Scroll_img = () => {
             <p>다양한 시도와 디자인으로 가치를 더하는 상품</p>
             <p>소중한 사람에게 마음을 전하는 가장 좋은 방법 스타벅스 카드</p>
           </div>
-          <Button
-            onClick={() => {
-              alert("자세히보기");
-            }}
-          >
-            자세히 보기
-          </Button>
+          <Button onClick={linkHandler}>자세히 보기</Button>
         </div>
         <span className={style.star}></span>
       </div>

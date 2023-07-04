@@ -1,13 +1,13 @@
-import React, { memo } from "react";
-import { getServerSession } from "next-auth";
+import React from "react";
 import HeaderList from "./HeaderList";
 import style from "./HeaderComponent.module.scss";
 import HeaderInput from "./HeaderInput";
 import Login from "@/app/button/Login";
 import Cart from "./Cart";
 import MobileHeader from "./MobileHeader";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Logout from "@/app/button/Logout";
+import { getServerSession } from "next-auth";
+import authOptions from "@/pages/api/auth/[...nextauth]";
 
 const HeaderComponent = async () => {
   let session = await getServerSession(authOptions);
@@ -23,14 +23,8 @@ const HeaderComponent = async () => {
           <div className={style.rigth}>
             <HeaderInput />
             <div className={style.info_wrap}>
-              {session === null ? (
-                <Login />
-              ) : (
-                <>
-                  <Logout />
-                  {/* {session.user.name}님 */}
-                </>
-              )}
+              <Login />
+              <Logout />
               <Cart />
             </div>
           </div>
@@ -43,4 +37,4 @@ const HeaderComponent = async () => {
   );
 };
 
-export default memo(HeaderComponent);
+export default HeaderComponent;
