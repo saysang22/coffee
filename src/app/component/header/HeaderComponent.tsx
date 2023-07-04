@@ -7,10 +7,10 @@ import Cart from "./Cart";
 import MobileHeader from "./MobileHeader";
 import Logout from "@/app/button/Logout";
 import { getServerSession } from "next-auth";
-import authOptions from "@/pages/api/auth/[...nextauth]";
+// import authOptions from "@/pages/api/auth/[...nextauth]";
 
 const HeaderComponent = async () => {
-  let session = await getServerSession(authOptions);
+  // let session = await getServerSession(authOptions);
 
   return (
     <>
