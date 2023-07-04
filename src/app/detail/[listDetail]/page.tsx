@@ -7,7 +7,6 @@ import Top from "@/app/component/menu/Top";
 import CartButton from "@/app/component/menu/CartButton";
 
 // export const dynamicParams = true;
-export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   const client = await clientPromise;
