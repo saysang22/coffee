@@ -26,9 +26,6 @@ const HeaderList = () => {
           >
             <Link href={data.url}>{data.title} </Link>
             <span className={style.line}></span>
-            <ul>
-              <li>데이터</li>
-            </ul>
           </li>
         );
       })}

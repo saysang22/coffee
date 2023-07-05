@@ -11,6 +11,7 @@ import style from "./Slide.module.scss";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 import Button from "../../common/Button";
+import { useRouter } from "next/navigation";
 
 const Slide = () => {
   const img = [
@@ -18,6 +19,11 @@ const Slide = () => {
     { id: 1, name: img_02, description: "리저브 서머 커피&원두 출시" },
     { id: 2, name: img_03, description: "만원 별 이벤트" },
   ];
+
+  const router = useRouter();
+  const buttonHandler = () => {
+    router.push("/shop/event");
+  };
 
   const settings = {
     dots: false,
@@ -38,13 +44,8 @@ const Slide = () => {
           return (
             <div key={img.id}>
               <Image src={img.name} alt={img.description} />
-              <Button
-                onClick={() => {
-                  alert("자세히보기");
-                }}
-                className={style.button}
-              >
-                자세히보기!
+              <Button onClick={buttonHandler} className={style.button}>
+                자세히보기
               </Button>
             </div>
           );

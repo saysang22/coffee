@@ -4,13 +4,17 @@ import style from "./Video.module.scss";
 import Image from "next/image";
 import coffee from "/public/ice_coffee.png";
 import Button from "../../common/Button";
-// import mv_01 from '/public/coffee_mv.mp4';
+import { useRouter } from "next/navigation";
 
 let VIDEO_ADDRESS = process.env.VIDEO_ADDRESS;
 
 const Video = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const router = useRouter();
 
+  const buttonHandler = () => {
+    router.push("/shop/event");
+  };
   useEffect(() => {
     const handleScroll = () => {
       const scrollHeight = window.scrollY || document.documentElement.scrollTop;
@@ -53,13 +57,7 @@ const Video = () => {
                 동시에 느낄 수 있으며, 차갑게 즐길 때 풍미가 더욱 깊어지는
                 원두입니다.
               </p>
-              <Button
-                onClick={() => {
-                  alert("자세히 보기");
-                }}
-              >
-                자세히 보기
-              </Button>
+              <Button onClick={buttonHandler}>자세히 보기</Button>
             </div>
           </div>
         </div>

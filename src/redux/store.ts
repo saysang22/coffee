@@ -1,3 +1,4 @@
+import cartSlice from './features/cart';
 import sideMenuSlice from './features/sideMenu';
 import foodSlice from './features/food';
 import coffeeSlice from './features/coffee';
@@ -12,6 +13,7 @@ export const store = configureStore({
         coffeeSlice,
         foodSlice,
         sideMenuSlice,
+        cartSlice,
     },
     devTools: process.env.NODE_ENV !== 'production'
 })

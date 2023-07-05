@@ -24,7 +24,6 @@ const HeaderComponent = async () => {
             <HeaderInput />
             <div className={style.info_wrap}>
               <Login />
-              <Logout />
               <Cart />
             </div>
           </div>

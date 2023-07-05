@@ -9,25 +9,24 @@ import img_04 from "/public/coffee_01_b.png";
 import main_title from "/public/main_title.png";
 import Image from "next/image";
 import Button from "../common/Button";
+import { useRouter } from "next/navigation";
 
 const Main = () => {
   const [mount, setMount] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMount(true);
   }, []);
 
+  const buttonHandler = () => {
+    router.push("/shop/event");
+  };
   return (
     <section className={style.main}>
       <div className={style.wrap}>
         <Image src={main_title} alt="DELIGHTFUL" />
-        <Button
-          onClick={() => {
-            alert("자세히 보기");
-          }}
-        >
-          자세히 보기
-        </Button>
+        <Button onClick={buttonHandler}>자세히 보기</Button>
         <Image src={img_04} alt="커피이미지" className={style.img_04} />
       </div>
       <Image

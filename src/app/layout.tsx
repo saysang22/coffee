@@ -5,6 +5,7 @@ import Providers from "../redux/provider";
 import HeaderComponent from "./component/header/HeaderComponent";
 import Footer from "./component/footer/Footer";
 import { Metadata } from "next";
+import ModalWrap from "./component/modal/ModalWrap";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          <ModalWrap />
           <HeaderComponent />
           {children}
           <Footer />
