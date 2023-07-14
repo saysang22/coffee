@@ -6,7 +6,7 @@ import HeaderComponent from "./component/header/HeaderComponent";
 import Footer from "./component/footer/Footer";
 import { Metadata } from "next";
 import ModalWrap from "./component/modal/ModalWrap";
-import ReactQueryProvider from "@/utill/reactQueryProvider";
+import ReactQueryProvider from "@/utill/ReactQueryProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
