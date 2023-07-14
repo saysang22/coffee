@@ -17,7 +17,8 @@ const nextConfig = {
     GITHUB_ID: "0e93c4ed4d618d45c75b",
     GITHUB_PW: "b403055ef27028fe4fcdb12060543555b4b25454",
     basePath: isDev ? "" : "/coffee",
-    // NEXTAUTH_URL: "http://localhost:3000",
+    MONGODB_URL:
+      "mongodb+srv://saysang2212:xfFd2k6qiUvoD8vW@cluster0.dnf1sql.mongodb.net/?retryWrites=true&w=majority",
   },
 };
 

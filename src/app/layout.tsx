@@ -6,6 +6,7 @@ import HeaderComponent from "./component/header/HeaderComponent";
 import Footer from "./component/footer/Footer";
 import { Metadata } from "next";
 import ModalWrap from "./component/modal/ModalWrap";
+import ReactQueryProvider from "@/utill/reactQueryProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,12 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
-          <ModalWrap />
-          <HeaderComponent />
-          {children}
-          <Footer />
-        </Providers>
+        <ReactQueryProvider>
+          <Providers>
+            <ModalWrap />
+            <HeaderComponent />
+            {children}
+            <Footer />
+          </Providers>
+        </ReactQueryProvider>
       </body>
     </html>
   );

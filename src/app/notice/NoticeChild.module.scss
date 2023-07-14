@@ -1,0 +1,50 @@
+@import "../styles/common";
+
+.wrap {
+  width: 100%;
+
+  li {
+    width: 100%;
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #d1d1d1;
+    &:hover {
+      background: #def0fd;
+    }
+    .id {
+      margin: 0 2rem 0 0rem;
+    }
+  }
+}
+
+.button_wrap {
+  width: 100%;
+  margin-top: 2rem;
+  @include flex(space-between, row);
+
+  .active {
+    background: $point_color;
+    color: #333;
+  }
+
+  button {
+    margin-left: 1rem;
+    border: none;
+    background: #333;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    &:hover {
+      background: #d1d1d1;
+      color: #333;
+      transition: all 0.5s;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
